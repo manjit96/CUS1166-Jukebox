@@ -6,14 +6,14 @@ from workspace.forms import LoginForm, RegistrationForm
 from workspace.models import User
 
 
-@app.route('/')
-@app.route('/index')
+# @app.route('/')
+@app.route('/index/')
 @login_required
 def index():
     return render_template('home.html', title='Home')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login/', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -31,13 +31,13 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
-@app.route('/logout')
+@app.route('/logout/')
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/register/', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -50,3 +50,6 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+if __name__ == '__main__':
+    app.run(debug=True)
