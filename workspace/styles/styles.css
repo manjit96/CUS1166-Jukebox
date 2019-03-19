@@ -1,21 +1,111 @@
 body{
-    background-color: black;
+    background-color: #eeeeee;
     color: white;
     text-align: center;
+    font-family: monospace;
 }
 
-
-h1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+h1 {
     width: 100%;
-    text-align: center;
-    /* margin: 10% 0; */
-    min-height: 200px;
-    background-color: rgba(33, 33, 33, .3);
-    align-items: center;
-
-      
+    display: fixed;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:10em;
+    -webkit-text-stroke: #333 5px;
+    color: aqua;
 }
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  .diagram {
+    z-index: -1;
+    position: sticky;
+    opacity: 0.5;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bg{
+      z-index: -1;
+      position: sticky;
+      opacity: 0.5;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  #form-container {
+      min-width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ 
+      box-shadow: 10px 10px #333;
+      background-color: aqua;
+      padding: 10px;
+      color: black;
+  }
+  button {
+      width: 280px;
+  }
+   
+  nav {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+   
+  ul {
+    overflow: hidden;
+    list-style-type: none;
+  }
+   
+  li {
+      
+    height: 35px;
+    float: center;
+    margin-right: 0px;
+    border-right: 1px solid #aaa;
+    padding: 0 20px;
+
+  }
+   
+  li:last-child {
+    border-right: none;
+  }
+   
+  li a {
+    text-decoration: none;
+    color: white;
+    font: 35px/1 Helvetica, Verdana, sans-serif;
+    text-transform: uppercase;
+   
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+   
+  li a:hover {
+    color: aqua;
+	opacity: .5;
+  }
+   
+  li.active a {
+    font-weight: bold;
+    color: aqua;
+   -webkit-text-stroke: 2px #333; 
+
+
+    
+  }
+
+
